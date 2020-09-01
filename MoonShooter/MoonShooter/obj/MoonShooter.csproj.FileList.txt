@@ -1,0 +1,7 @@
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\MoonShooter.Properties.Resources.resources
+obj\Release\MoonShooter.csproj.GenerateResource.Cache
+obj\Release\MoonShooter.exe
+obj\Release\MoonShooter.pdb
+.\MoonShooter.exe
+.\MoonShooter.pdb

@@ -1,0 +1,4 @@
+C:\Users\Owner\Documents\Visual Studio 2008\Projects\SimpsonJam\Downloads\MoonShooter\MoonShooter\MoonShooter\obj\Debug\MoonShooter.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\Visual Studio 2008\Projects\SimpsonJam\Downloads\MoonShooter\MoonShooter\MoonShooter\obj\Debug\MoonShooter.Properties.Resources.resources
+C:\Users\Owner\Documents\Visual Studio 2008\Projects\SimpsonJam\Downloads\MoonShooter\MoonShooter\MoonShooter\obj\Debug\MoonShooter.csproj.GenerateResource.cache
+C:\Users\Owner\Documents\Visual Studio 2008\Projects\SimpsonJam\Downloads\MoonShooter\MoonShooter\MoonShooter\obj\Debug\MoonShooter.csproj.CoreCompileInputs.cache
