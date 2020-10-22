@@ -1,0 +1,10 @@
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\bin\Debug\Metric-US Converter.exe.config
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\bin\Debug\Metric-US Converter.exe
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\bin\Debug\Metric-US Converter.pdb
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric-US Converter.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric_US_Converter.Form1.resources
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric_US_Converter.Properties.Resources.resources
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric-US Converter.csproj.GenerateResource.cache
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric-US Converter.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric-US Converter.exe
+C:\Users\Owner\Documents\Projects\HackerRank\Metric-US Converter\Metric-US Converter\obj\Debug\Metric-US Converter.pdb
