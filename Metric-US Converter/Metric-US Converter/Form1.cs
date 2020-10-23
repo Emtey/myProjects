@@ -72,6 +72,8 @@ namespace Metric_US_Converter
                 return;
             }
 
+            //Instantiate Converter Class and call the do_conversion method to 
+            //perform the conversion.
             Converter myConverter = new Converter(inputValue, conversionIndex);
             TxtBoxResult.Text = myConverter.do_conversion();
             TxtBoxInput.Focus();
