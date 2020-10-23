@@ -1,2 +1,0 @@
-This is a program I wrote that in C# that converts some Metric to US and vice-versa.  I'll add more to it as right now it just does a couple of things.
-I used a class so the front end is pretty basic and it passes the information to the class for easy extensibility.
