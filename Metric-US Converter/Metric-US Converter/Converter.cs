@@ -32,6 +32,11 @@ namespace Metric_US_Converter
         }
         #endregion
 
+        /// <summary>
+        /// Gets the index from the drop down box and uses it to call the 
+        /// appropriate function.
+        /// </summary>
+        /// <returns></returns>
         public string do_conversion()
         {
             string conversionOutput = "";
@@ -48,13 +53,24 @@ namespace Metric_US_Converter
                     conversionOutput = InchesToCentimeters(inputValue);
                     break;
                 case 3:
-                    conversionOutput = CentimetersToInches(InputValue);
+                    conversionOutput = CentimetersToInches(inputValue);
+                    break;
+                case 4:
+                    conversionOutput = FeetToMeters(inputValue);
+                    break;
+                case 5:
+                    conversionOutput = MetersToFeet(inputValue);
                     break;
             }
 
             return conversionOutput;
         }
 
+        /// <summary>
+        /// Convert Farenheit to Celcius
+        /// </summary>
+        /// <param name="inputValue">inputted value</param>
+        /// <returns></returns>
         private string FarenheitToCelcius(double inputValue)
         {
             double myValue = (inputValue - 32) * 5 / 9;
@@ -73,10 +89,22 @@ namespace Metric_US_Converter
             return String.Format("{0} cm", myValue.ToString("0.##"));
         }
 
-        private string CentimetersToInches(double InputValue)
+        private string CentimetersToInches(double inputValue)
         {
             double myValue = (inputValue / 2.54);
             return String.Format("{0} in", myValue.ToString("0.##"));
+        }
+
+        private string FeetToMeters(double inputValue)
+        {
+            double myValue = (inputValue * .3048);
+            return String.Format("{0} m", myValue.ToString("0.##"));
+        }
+
+        private string MetersToFeet(double inputValue)
+        {
+            double myValue = (inputValue / .3048);
+            return String.Format("{0} ft", myValue.ToString("0.##"));
         }
     }
 }

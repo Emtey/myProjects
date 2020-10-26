@@ -21,7 +21,9 @@ namespace Metric_US_Converter
                 "Farenheit to Celcius",
                 "Celcius to Farenheit",
                 "Inches to Centimeters",
-                "Centimeters to Inches"
+                "Centimeters to Inches",
+                "Feet to Meters",
+                "Meters to Feet"
             };
 
             foreach (string conversion in conversions)
