@@ -10,12 +10,14 @@ namespace Metric_US_Converter
     {
         private double inputValue;
         private int index;
-        
+        private int indexType;
+
         //Constructor
-        public Converter(double inputValue, int index)
+        public Converter(double inputValue, int index, int indexType)
         {
             this.InputValue = inputValue;
             this.Index = index;
+            this.IndexType = indexType;
         }
 
         #region Getters/Setters
@@ -28,7 +30,13 @@ namespace Metric_US_Converter
         public int Index
         {
             get { return index; }
-            set { index = value;  }
+            set { index = value; }
+        }
+
+        public int IndexType
+        {
+            get { return indexType; }
+            set { indexType = value; }
         }
         #endregion
 
@@ -40,26 +48,37 @@ namespace Metric_US_Converter
         public string do_conversion()
         {
             string conversionOutput = "";
-
-            switch (index)
+            switch (IndexType)
             {
-                case 0:
-                    conversionOutput = FarenheitToCelcius(inputValue);
+                case 0: //temperature
+                    switch (index)
+                    {
+                        case 0:
+                            conversionOutput = FarenheitToCelcius(inputValue);
+                            break;
+                        case 1:
+                            conversionOutput = CelciusToFarenheit(inputValue);
+                            break;
+                    }
                     break;
-                case 1:
-                    conversionOutput = CelciusToFarenheit(inputValue);
-                    break;
-                case 2:
-                    conversionOutput = InchesToCentimeters(inputValue);
-                    break;
-                case 3:
-                    conversionOutput = CentimetersToInches(inputValue);
-                    break;
-                case 4:
-                    conversionOutput = FeetToMeters(inputValue);
-                    break;
-                case 5:
-                    conversionOutput = MetersToFeet(inputValue);
+                case 1: //Length
+                    {
+                        switch (index)
+                        {
+                            case 0:
+                                conversionOutput = InchesToCentimeters(inputValue);
+                                break;
+                            case 1:
+                                conversionOutput = CentimetersToInches(inputValue);
+                                break;
+                            case 2:
+                                conversionOutput = FeetToMeters(inputValue);
+                                break;
+                            case 3:
+                                conversionOutput = MetersToFeet(inputValue);
+                                break;
+                        }
+                    }
                     break;
             }
 

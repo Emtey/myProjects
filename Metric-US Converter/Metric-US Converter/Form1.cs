@@ -16,8 +16,20 @@ namespace Metric_US_Converter
         {
             InitializeComponent();
 
+            string[] conversionType =
+            {
+                "Temperature",
+                "Length",
+                "Volume"
+            };
+
+            foreach (string type in conversionType)
+            {
+                conversionTypeCmbBox.Items.Add(type);
+            }
+
             //build the comboBox
-            string[] conversions = {
+            /*string[] conversions = {
                 "Farenheit to Celcius",
                 "Celcius to Farenheit",
                 "Inches to Centimeters",
@@ -29,7 +41,7 @@ namespace Metric_US_Converter
             foreach (string conversion in conversions)
             {
                 cmboConversion.Items.Add(conversion);
-            }
+            }*/
         }
 
         /// <summary>
@@ -43,6 +55,7 @@ namespace Metric_US_Converter
         {
             double inputValue = 0;
             int conversionIndex;
+            int conversionType;
             
             if (TxtBoxInput.Text == "")
             {
@@ -65,20 +78,50 @@ namespace Metric_US_Converter
             }
 
             //Check to see if the user selected a Conversion type, if not throw exception
-            if (cmboConversion.SelectedIndex > -1)
-                    conversionIndex = cmboConversion.SelectedIndex;
+            if (conversionTypeCmbBox.SelectedIndex > -1)
+                    conversionType = conversionTypeCmbBox.SelectedIndex;
             else
             { 
-                MessageBox.Show("Must select a conversion type");
-                cmboConversion.Focus();
+                MessageBox.Show("Please select a conversion type");
+                conversionTypeCmbBox.Focus();
                 return;
             }
+            //get the Selected Index from the Conversion Combo Box
+            conversionIndex = cmboConversion.SelectedIndex;
 
             //Instantiate Converter Class and call the do_conversion method to 
             //perform the conversion.
-            Converter myConverter = new Converter(inputValue, conversionIndex);
+            Converter myConverter = new Converter(inputValue, conversionIndex, conversionType);
             TxtBoxResult.Text = myConverter.do_conversion();
             TxtBoxInput.Focus();
+        }
+
+        private void conversionTypeCmbBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (conversionTypeCmbBox.SelectedIndex > -1)
+            {
+                cmboConversion.Items.Clear();
+                
+                switch (conversionTypeCmbBox.SelectedIndex)
+                {
+                    case 0: //temperature
+                        cmboConversion.Items.Add("Farenheit to Celcius");
+                        cmboConversion.Items.Add("Celcius to Farenheit");
+                        break;
+                    case 1: //Length
+                        cmboConversion.Items.Add("Inches to Centimeters");
+                        cmboConversion.Items.Add("Centimeters to Inches");
+                        cmboConversion.Items.Add("Feet to Meters");
+                        cmboConversion.Items.Add("Meters to Feet");
+                        break;
+
+                }
+
+                //now set the first item in the cmboConversion box to the 0 value (first value)
+                cmboConversion.SelectedIndex = 0;
+
+            }
+
         }
     }
 }
