@@ -37,7 +37,7 @@ namespace Metric_US_Converter
             string output = "";
             switch (index)
             {
-                case 0: //inches to CM
+                case 0: 
                     output = InchesToCentimeters(inputValue);
                     break;
                 case 1:

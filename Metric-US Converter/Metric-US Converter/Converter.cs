@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Metric_US_Converter
 {
+    /// <summary>
+    /// This class gets the values, then figures out what to do with them
+    /// and calls the appropriate class depending on the values.
+    /// </summary>
     public class Converter
     {
         private double inputValue;
@@ -45,7 +49,7 @@ namespace Metric_US_Converter
         /// appropriate function.
         /// </summary>
         /// <returns></returns>
-        public string do_conversion()
+        public string Do_Conversion()
         {
             string conversionOutput = "";
             switch (IndexType)
@@ -58,13 +62,13 @@ namespace Metric_US_Converter
                     Length myLength = new Length(inputValue, index);
                     conversionOutput = myLength.ConvertLength();
                     break;
+                case 2: //Volume
+                    Volume myVolume = new Volume(inputValue, index);
+                    conversionOutput = myVolume.ConvertVolume();
+                    break;
             }
 
             return conversionOutput;
         }
-
-        
-
-        
     }
 }

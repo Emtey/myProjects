@@ -86,13 +86,13 @@ namespace Metric_US_Converter
                 conversionTypeCmbBox.Focus();
                 return;
             }
-            //get the Selected Index from the Conversion Combo Box
+            //get the Selected Index from the Conversion Combo Box.
             conversionIndex = cmboConversion.SelectedIndex;
 
             //Instantiate Converter Class and call the do_conversion method to 
             //perform the conversion.
             Converter myConverter = new Converter(inputValue, conversionIndex, conversionType);
-            TxtBoxResult.Text = myConverter.do_conversion();
+            TxtBoxResult.Text = myConverter.Do_Conversion();
             TxtBoxInput.Focus();
         }
 
@@ -113,6 +113,10 @@ namespace Metric_US_Converter
                         cmboConversion.Items.Add("Centimeters to Inches");
                         cmboConversion.Items.Add("Feet to Meters");
                         cmboConversion.Items.Add("Meters to Feet");
+                        break;
+                    case 2: //Volume
+                        cmboConversion.Items.Add("Cups to Gallons");
+                        cmboConversion.Items.Add("Gallons to Cups");
                         break;
 
                 }
