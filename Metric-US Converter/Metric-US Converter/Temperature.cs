@@ -43,6 +43,18 @@ namespace Metric_US_Converter
                 case 1:
                     output = CelciusToFarenheit(inputValue);
                     break;
+                case 2:
+                    output = FarenheitToKelvin(inputValue);
+                    break;
+                case 3:
+                    output = KelvinToFarenheit(inputValue);
+                    break;
+                case 4:
+                    output = CelciusToKelvin(inputValue);
+                    break;
+                case 5:
+                    output = KelvinToCelcius(inputValue);
+                    break;
             }
             return output;
         }
@@ -63,6 +75,31 @@ namespace Metric_US_Converter
             double myValue = (inputValue * 9 / 5) + 32;
             return String.Format("{0}'C", myValue.ToString("0.#"));
         }
+
+        private string FarenheitToKelvin(double inputValue)
+        {
+            double myValue = (inputValue - 32) * 5 / 9 + 273.15;
+            return String.Format("{0}'K", myValue.ToString("0.###"));
+        }
+
+        private string KelvinToFarenheit(double inputValue)
+        {
+            double myValue = (inputValue - 273.15) * 9/5 + 32;
+            return String.Format("{0}'F", myValue.ToString("0.###"));
+        }
+
+        private string CelciusToKelvin(double inputValue)
+        {
+            double myValue = (inputValue + 273.15);
+            return String.Format("{0}'K", myValue.ToString("0.##"));
+        }
+
+        private string KelvinToCelcius(double inputValue)
+        {
+            double myValue = (inputValue - 273.15);
+            return String.Format("{0}'C", myValue.ToString("0.##"));
+        }
+
 
     }
 }

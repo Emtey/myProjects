@@ -43,6 +43,18 @@ namespace Metric_US_Converter
                 case 1:
                     output = GallonsToCups(inputValue);
                     break;
+                case 2:
+                    output = USCupToUSQuart(inputValue);
+                    break;
+                case 3:
+                    output = USQuartToUSCup(inputValue);
+                    break;
+                case 4:
+                    output = USCupToUSPint(inputValue);
+                    break;
+                case 5:
+                    output = USPintToUSCup(inputValue);
+                    break;
             }
             return output;
         }
@@ -57,6 +69,29 @@ namespace Metric_US_Converter
         {
             double myValue = (inputValue * 16);
             return String.Format("{0} cups", myValue.ToString("0.####"));
+        }
+
+        private string USCupToUSQuart(double inputValue)
+        {
+            double myValue = (inputValue / 4);
+            return String.Format("{0} US Quarts", myValue.ToString("0.###"));
+        }
+        private string USQuartToUSCup(double inputValue)
+        {
+            double myValue = (inputValue * 4);
+            return String.Format("{0} cups", myValue.ToString("0.###"));
+        }
+
+        private string USCupToUSPint(double inputValue)
+        {
+            double myValue = (inputValue / 2);
+            return String.Format("{0} US Pints", myValue.ToString("0.##"));
+        }
+
+        private string USPintToUSCup(double inputValue)
+        {
+            double myValue = (inputValue * 2);
+            return String.Format("{0} US cups", myValue.ToString("0.##"));
         }
     }
 }

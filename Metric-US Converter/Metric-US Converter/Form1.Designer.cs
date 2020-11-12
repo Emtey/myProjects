@@ -125,7 +125,7 @@
             this.Controls.Add(this.TxtBoxInput);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Metric Converter";
             this.ResumeLayout(false);
             this.PerformLayout();
 

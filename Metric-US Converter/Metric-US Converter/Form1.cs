@@ -107,6 +107,10 @@ namespace Metric_US_Converter
                     case 0: //temperature
                         cmboConversion.Items.Add("Farenheit to Celcius");
                         cmboConversion.Items.Add("Celcius to Farenheit");
+                        cmboConversion.Items.Add("Farenheit to Kelvin");
+                        cmboConversion.Items.Add("Kelvin to Farenheit");
+                        cmboConversion.Items.Add("Celcius to Kelvin");
+                        cmboConversion.Items.Add("Kelvin to Celcius");
                         break;
                     case 1: //Length
                         cmboConversion.Items.Add("Inches to Centimeters");
@@ -115,8 +119,12 @@ namespace Metric_US_Converter
                         cmboConversion.Items.Add("Meters to Feet");
                         break;
                     case 2: //Volume
-                        cmboConversion.Items.Add("Cups to Gallons");
-                        cmboConversion.Items.Add("Gallons to Cups");
+                        cmboConversion.Items.Add("US Cups to US Gallon");
+                        cmboConversion.Items.Add("US Gallons to Cups");
+                        cmboConversion.Items.Add("US Cup to US Quart");
+                        cmboConversion.Items.Add("US Quart to US Cup");
+                        cmboConversion.Items.Add("US Cup to US Pint");
+                        cmboConversion.Items.Add("US Pint to US Cup");
                         break;
 
                 }
