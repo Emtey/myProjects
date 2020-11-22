@@ -91,7 +91,26 @@ namespace Metric_US_Converter
         private string USPintToUSCup(double inputValue)
         {
             double myValue = (inputValue * 2);
-            return String.Format("{0} US cups", myValue.ToString("0.##"));
+            return String.Format("{0} US Cups", myValue.ToString("0.##"));
+        }
+
+        private string USCuptoUSLegalCup(double inputValue)
+        {
+            double myValue = (inputValue / 1.014);
+            return String.Format("{0} US Legal Cups", myValue.ToString("0.##"));
+        }
+        
+
+        private string USCupToUSFluidOunce (double inputvalue)
+        {
+            double myValue = (inputValue * 8);
+            return String.Format("{0} US Fluid Oz", myValue.ToString("0.##"));
+        }
+        
+        private string USFLuidOunceToUSCup(double inputvalue)
+        {
+            double myValue = (inputValue / 8);
+            return String.Format("{0} US Cups", myValue.ToString("0.##"));
         }
     }
 }

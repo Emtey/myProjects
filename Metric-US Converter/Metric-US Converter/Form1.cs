@@ -128,7 +128,7 @@ namespace Metric_US_Converter
                         break;
 
                 }
-
+               
                 //now set the first item in the cmboConversion box to the 0 value (first value)
                 cmboConversion.SelectedIndex = 0;
 
