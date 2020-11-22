@@ -112,5 +112,12 @@ namespace Metric_US_Converter
             double myValue = (inputValue / 8);
             return String.Format("{0} US Cups", myValue.ToString("0.##"));
         }
+
+        private string USFLuidOunceToUSGallon(double inputvalue)
+        {
+            double myValue = (inputValue / 128);
+            return String.Format("{0} US Gallons", myValue.ToString("0.####"));
+        }
+
     }
 }
