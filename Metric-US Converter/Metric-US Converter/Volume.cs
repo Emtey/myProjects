@@ -100,7 +100,6 @@ namespace Metric_US_Converter
             return String.Format("{0} US Legal Cups", myValue.ToString("0.##"));
         }
         
-
         private string USCupToUSFluidOunce (double inputvalue)
         {
             double myValue = (inputValue * 8);

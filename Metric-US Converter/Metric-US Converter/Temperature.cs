@@ -8,52 +8,46 @@ namespace Metric_US_Converter
 {
     class Temperature
     {
-        private double inputValue;
-        private int index;
+        private double InputValue;
+        private int FromIndex;
+        private int ToIndex;
 
         //constructor
-        public Temperature(double inputValue, int index)
+        public Temperature(double inputValue, int fromIndex, int toIndex)
         {
             this.InputValue = inputValue;
-            this.Index = index;
+            this.FromIndex = fromIndex;
+            this.ToIndex = toIndex;
         }
-
-        #region Get/Set
-        public double InputValue
-        {
-            get { return inputValue; }
-            set { inputValue = value; }
-        }
-
-        public int Index
-        {
-            get { return index; }
-            set { index = value; }
-        }
-        #endregion
 
         public string ConvertTemperature()
         {
             string output = "";
-            switch (index)
+            switch (FromIndex)
             {
                 case 0:
-                    output = FarenheitToCelcius(inputValue);
+                    if (ToIndex == FromIndex)
+                        output = String.Format("{0} 'F", InputValue.ToString("0.#"));
+                    if (ToIndex == 1) //celcius
+                        output = FarenheitToCelcius(InputValue);
+                    if (ToIndex == 2) //kelvin
+                        output = FarenheitToKelvin(InputValue);
                     break;
                 case 1:
-                    output = CelciusToFarenheit(inputValue);
+                    if (ToIndex == FromIndex)
+                        output = String.Format("{0}'C", InputValue.ToString("0.#"));
+                    if (ToIndex == 0) //farenheit
+                        output = CelciusToFarenheit(InputValue);
+                    if (ToIndex == 2) //kelvin
+                        output = CelciusToKelvin(InputValue);
                     break;
                 case 2:
-                    output = FarenheitToKelvin(inputValue);
-                    break;
-                case 3:
-                    output = KelvinToFarenheit(inputValue);
-                    break;
-                case 4:
-                    output = CelciusToKelvin(inputValue);
-                    break;
-                case 5:
-                    output = KelvinToCelcius(inputValue);
+                    if (ToIndex == FromIndex)
+                        output = String.Format("{0}'K", InputValue.ToString("0.##"));
+                    if (ToIndex == 0) //farenheit
+                        output = KelvinToFarenheit(InputValue);
+                    if (ToIndex == 1) //Celcius
+                        output = KelvinToCelcius(InputValue);
                     break;
             }
             return output;
@@ -73,7 +67,7 @@ namespace Metric_US_Converter
         private string CelciusToFarenheit(double inputValue)
         {
             double myValue = (inputValue * 9 / 5) + 32;
-            return String.Format("{0}'C", myValue.ToString("0.#"));
+            return String.Format("{0}'F", myValue.ToString("0.#"));
         }
 
         private string FarenheitToKelvin(double inputValue)

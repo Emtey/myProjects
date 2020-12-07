@@ -34,8 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LblConversion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmboConversion = new System.Windows.Forms.ComboBox();
+            this.cmboConvertFrom = new System.Windows.Forms.ComboBox();
             this.conversionTypeCmbBox = new System.Windows.Forms.ComboBox();
+            this.cmboConvertTo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -58,10 +59,10 @@
             // TxtBoxResult
             // 
             this.TxtBoxResult.Enabled = false;
-            this.TxtBoxResult.Location = new System.Drawing.Point(138, 120);
+            this.TxtBoxResult.Location = new System.Drawing.Point(352, 73);
             this.TxtBoxResult.Name = "TxtBoxResult";
             this.TxtBoxResult.ReadOnly = true;
-            this.TxtBoxResult.Size = new System.Drawing.Size(100, 20);
+            this.TxtBoxResult.Size = new System.Drawing.Size(158, 20);
             this.TxtBoxResult.TabIndex = 2;
             this.TxtBoxResult.TabStop = false;
             // 
@@ -84,22 +85,21 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 120);
+            this.label3.Location = new System.Drawing.Point(323, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Converted Value: ";
+            this.label3.Text = "TO";
             // 
-            // cmboConversion
+            // cmboConvertFrom
             // 
-            this.cmboConversion.FormattingEnabled = true;
-            this.cmboConversion.IntegralHeight = false;
-            this.cmboConversion.Location = new System.Drawing.Point(138, 93);
-            this.cmboConversion.Name = "cmboConversion";
-            this.cmboConversion.Size = new System.Drawing.Size(159, 21);
-            this.cmboConversion.TabIndex = 3;
-            this.cmboConversion.Text = "Convert To";
-            this.cmboConversion.UseWaitCursor = true;
+            this.cmboConvertFrom.FormattingEnabled = true;
+            this.cmboConvertFrom.IntegralHeight = false;
+            this.cmboConvertFrom.Location = new System.Drawing.Point(138, 93);
+            this.cmboConvertFrom.Name = "cmboConvertFrom";
+            this.cmboConvertFrom.Size = new System.Drawing.Size(159, 21);
+            this.cmboConvertFrom.TabIndex = 3;
+            this.cmboConvertFrom.UseWaitCursor = true;
             // 
             // conversionTypeCmbBox
             // 
@@ -111,13 +111,24 @@
             this.conversionTypeCmbBox.Text = "Select Conversion Type...";
             this.conversionTypeCmbBox.SelectedIndexChanged += new System.EventHandler(this.conversionTypeCmbBox_SelectedIndexChanged);
             // 
+            // cmboConvertTo
+            // 
+            this.cmboConvertTo.FormattingEnabled = true;
+            this.cmboConvertTo.IntegralHeight = false;
+            this.cmboConvertTo.Location = new System.Drawing.Point(351, 93);
+            this.cmboConvertTo.Name = "cmboConvertTo";
+            this.cmboConvertTo.Size = new System.Drawing.Size(159, 21);
+            this.cmboConvertTo.TabIndex = 9;
+            this.cmboConvertTo.UseWaitCursor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 248);
+            this.ClientSize = new System.Drawing.Size(668, 248);
+            this.Controls.Add(this.cmboConvertTo);
             this.Controls.Add(this.conversionTypeCmbBox);
-            this.Controls.Add(this.cmboConversion);
+            this.Controls.Add(this.cmboConvertFrom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LblConversion);
             this.Controls.Add(this.label1);
@@ -139,8 +150,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblConversion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmboConversion;
+        private System.Windows.Forms.ComboBox cmboConvertFrom;
         private System.Windows.Forms.ComboBox conversionTypeCmbBox;
+        private System.Windows.Forms.ComboBox cmboConvertTo;
     }
 }
 

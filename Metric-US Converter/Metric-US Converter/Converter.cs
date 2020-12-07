@@ -13,14 +13,16 @@ namespace Metric_US_Converter
     public class Converter
     {
         private double inputValue;
-        private int index;
+        private int fromIndex;
+        private int toIndex;
         private int indexType;
 
         //Constructor
-        public Converter(double inputValue, int index, int indexType)
+        public Converter(double inputValue, int fromIndex, int toIndex, int indexType)
         {
             this.InputValue = inputValue;
-            this.Index = index;
+            this.FromIndex = fromIndex;
+            this.ToIndex = toIndex;
             this.IndexType = indexType;
         }
 
@@ -31,10 +33,16 @@ namespace Metric_US_Converter
             set { inputValue = value; }
         }
 
-        public int Index
+        public int FromIndex
         {
-            get { return index; }
-            set { index = value; }
+            get { return fromIndex; }
+            set { fromIndex = value; }
+        }
+        
+        public int ToIndex
+        {
+            get { return toIndex; }
+            set { toIndex = value; }
         }
 
         public int IndexType
@@ -55,17 +63,17 @@ namespace Metric_US_Converter
             switch (IndexType)
             {
                 case 0: //temperature
-                    Temperature myTemp = new Temperature(inputValue, index);
+                    Temperature myTemp = new Temperature(inputValue, FromIndex, ToIndex);
                     conversionOutput = myTemp.ConvertTemperature();
                     break;
-                case 1: //Length
+                /*case 1: //Length
                     Length myLength = new Length(inputValue, index);
                     conversionOutput = myLength.ConvertLength();
                     break;
                 case 2: //Volume
                     Volume myVolume = new Volume(inputValue, index);
                     conversionOutput = myVolume.ConvertVolume();
-                    break;
+                    break;*/
             }
 
             return conversionOutput;

@@ -28,20 +28,9 @@ namespace Metric_US_Converter
                 conversionTypeCmbBox.Items.Add(type);
             }
 
-            //build the comboBox
-            /*string[] conversions = {
-                "Farenheit to Celcius",
-                "Celcius to Farenheit",
-                "Inches to Centimeters",
-                "Centimeters to Inches",
-                "Feet to Meters",
-                "Meters to Feet"
-            };
+            //set the combobox to the first item 
+            conversionTypeCmbBox.SelectedIndex = 0;
 
-            foreach (string conversion in conversions)
-            {
-                cmboConversion.Items.Add(conversion);
-            }*/
         }
 
         /// <summary>
@@ -53,8 +42,9 @@ namespace Metric_US_Converter
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            double inputValue = 0;
-            int conversionIndex;
+            double inputValue;
+            int convertFromIndex;
+            int convertToIndex;
             int conversionType;
             
             if (TxtBoxInput.Text == "")
@@ -77,21 +67,12 @@ namespace Metric_US_Converter
        
             }
 
-            //Check to see if the user selected a Conversion type, if not throw exception
-            if (conversionTypeCmbBox.SelectedIndex > -1)
-                    conversionType = conversionTypeCmbBox.SelectedIndex;
-            else
-            { 
-                MessageBox.Show("Please select a conversion type");
-                conversionTypeCmbBox.Focus();
-                return;
-            }
-            //get the Selected Index from the Conversion Combo Box.
-            conversionIndex = cmboConversion.SelectedIndex;
-
+            convertFromIndex = cmboConvertFrom.SelectedIndex;
+            convertToIndex = cmboConvertTo.SelectedIndex;
+            conversionType = conversionTypeCmbBox.SelectedIndex;
             //Instantiate Converter Class and call the do_conversion method to 
             //perform the conversion.
-            Converter myConverter = new Converter(inputValue, conversionIndex, conversionType);
+            Converter myConverter = new Converter(inputValue, convertFromIndex, convertToIndex, conversionType);
             TxtBoxResult.Text = myConverter.Do_Conversion();
             TxtBoxInput.Focus();
         }
@@ -100,37 +81,43 @@ namespace Metric_US_Converter
         {
             if (conversionTypeCmbBox.SelectedIndex > -1)
             {
-                cmboConversion.Items.Clear();
+                cmboConvertFrom.Items.Clear();
                 
                 switch (conversionTypeCmbBox.SelectedIndex)
                 {
                     case 0: //temperature
-                        cmboConversion.Items.Add("Farenheit to Celcius");
-                        cmboConversion.Items.Add("Celcius to Farenheit");
-                        cmboConversion.Items.Add("Farenheit to Kelvin");
-                        cmboConversion.Items.Add("Kelvin to Farenheit");
-                        cmboConversion.Items.Add("Celcius to Kelvin");
-                        cmboConversion.Items.Add("Kelvin to Celcius");
+                        cmboConvertFrom.Items.Add("Farenheit");
+                        cmboConvertFrom.Items.Add("Celcius");
+                        cmboConvertFrom.Items.Add("Kelvin");
+
+                        cmboConvertTo.Items.Add("Farenheit");
+                        cmboConvertTo.Items.Add("Celcius");
+                        cmboConvertTo.Items.Add("Kelvin");
                         break;
                     case 1: //Length
-                        cmboConversion.Items.Add("Inches to Centimeters");
-                        cmboConversion.Items.Add("Centimeters to Inches");
-                        cmboConversion.Items.Add("Feet to Meters");
-                        cmboConversion.Items.Add("Meters to Feet");
+                        cmboConvertFrom.Items.Add("Inches");
+                        cmboConvertFrom.Items.Add("Feet");
+                        cmboConvertFrom.Items.Add("Yards");
+                        cmboConvertFrom.Items.Add("Miles");
+                        cmboConvertFrom.Items.Add("Millimeters");
+                        cmboConvertFrom.Items.Add("Centimeters");
+                        cmboConvertFrom.Items.Add("Meters");
+                        cmboConvertFrom.Items.Add("Kilometers");
                         break;
                     case 2: //Volume
-                        cmboConversion.Items.Add("US Cups to US Gallon");
-                        cmboConversion.Items.Add("US Gallons to Cups");
-                        cmboConversion.Items.Add("US Cup to US Quart");
-                        cmboConversion.Items.Add("US Quart to US Cup");
-                        cmboConversion.Items.Add("US Cup to US Pint");
-                        cmboConversion.Items.Add("US Pint to US Cup");
+                        cmboConvertFrom.Items.Add("US Cups to US Gallon");
+                        cmboConvertFrom.Items.Add("US Gallons to Cups");
+                        cmboConvertFrom.Items.Add("US Cup to US Quart");
+                        cmboConvertFrom.Items.Add("US Quart to US Cup");
+                        cmboConvertFrom.Items.Add("US Cup to US Pint");
+                        cmboConvertFrom.Items.Add("US Pint to US Cup");
                         break;
 
                 }
                
                 //now set the first item in the cmboConversion box to the 0 value (first value)
-                cmboConversion.SelectedIndex = 0;
+                cmboConvertFrom.SelectedIndex = 0;
+                cmboConvertTo.SelectedIndex = 1; 
 
             }
 
