@@ -103,6 +103,15 @@ namespace Metric_US_Converter
                         cmboConvertFrom.Items.Add("Centimeters");
                         cmboConvertFrom.Items.Add("Meters");
                         cmboConvertFrom.Items.Add("Kilometers");
+
+                        cmboConvertTo.Items.Add("Inches");
+                        cmboConvertTo.Items.Add("Feet");
+                        cmboConvertTo.Items.Add("Yards");
+                        cmboConvertTo.Items.Add("Miles");
+                        cmboConvertTo.Items.Add("Millimeters");
+                        cmboConvertTo.Items.Add("Centimeters");
+                        cmboConvertTo.Items.Add("Meters");
+                        cmboConvertTo.Items.Add("Kilometers");
                         break;
                     case 2: //Volume
                         cmboConvertFrom.Items.Add("US Cups to US Gallon");
