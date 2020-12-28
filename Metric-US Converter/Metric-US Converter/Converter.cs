@@ -66,11 +66,11 @@ namespace Metric_US_Converter
                     Temperature myTemp = new Temperature(inputValue, FromIndex, ToIndex);
                     conversionOutput = myTemp.ConvertTemperature();
                     break;
-                /*case 1: //Length
-                    Length myLength = new Length(inputValue, index);
+                case 1: //Length
+                    Length myLength = new Length(inputValue, FromIndex, ToIndex);
                     conversionOutput = myLength.ConvertLength();
                     break;
-                case 2: //Volume
+               /* case 2: //Volume
                     Volume myVolume = new Volume(inputValue, index);
                     conversionOutput = myVolume.ConvertVolume();
                     break;*/

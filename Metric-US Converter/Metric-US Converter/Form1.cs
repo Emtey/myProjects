@@ -82,6 +82,7 @@ namespace Metric_US_Converter
             if (conversionTypeCmbBox.SelectedIndex > -1)
             {
                 cmboConvertFrom.Items.Clear();
+                cmboConvertTo.Items.Clear();
                 
                 switch (conversionTypeCmbBox.SelectedIndex)
                 {
@@ -114,12 +115,16 @@ namespace Metric_US_Converter
                         cmboConvertTo.Items.Add("Kilometers");
                         break;
                     case 2: //Volume
-                        cmboConvertFrom.Items.Add("US Cups to US Gallon");
-                        cmboConvertFrom.Items.Add("US Gallons to Cups");
-                        cmboConvertFrom.Items.Add("US Cup to US Quart");
-                        cmboConvertFrom.Items.Add("US Quart to US Cup");
-                        cmboConvertFrom.Items.Add("US Cup to US Pint");
-                        cmboConvertFrom.Items.Add("US Pint to US Cup");
+                        cmboConvertFrom.Items.Add("US Cups");
+                        cmboConvertFrom.Items.Add("US Quart");
+                        cmboConvertFrom.Items.Add("US Pint");
+                        cmboConvertFrom.Items.Add("US Gallon");
+
+                        cmboConvertTo.Items.Add("US Cups");
+                        cmboConvertTo.Items.Add("US Quart");
+                        cmboConvertTo.Items.Add("US Pint");
+                        cmboConvertTo.Items.Add("US Gallon");
+
                         break;
 
                 }
