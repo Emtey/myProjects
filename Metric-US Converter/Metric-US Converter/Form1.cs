@@ -119,19 +119,30 @@ namespace Metric_US_Converter
                         cmboConvertFrom.Items.Add("US Quart");
                         cmboConvertFrom.Items.Add("US Pint");
                         cmboConvertFrom.Items.Add("US Gallon");
+                        cmboConvertFrom.Items.Add("US Ounce");
+                        cmboConvertFrom.Items.Add("US Tablespoon");
+                        cmboConvertFrom.Items.Add("US Teaspoon");
+                        cmboConvertFrom.Items.Add("Liter");
+                        cmboConvertFrom.Items.Add("Milliliter");
 
                         cmboConvertTo.Items.Add("US Cups");
                         cmboConvertTo.Items.Add("US Quart");
                         cmboConvertTo.Items.Add("US Pint");
-                        cmboConvertTo.Items.Add("US Gallon");
+                        cmboConvertTo.Items.Add("US Gallon"); 
+                        cmboConvertTo.Items.Add("US Ounce");
+                        cmboConvertTo.Items.Add("US Tablespoon");
+                        cmboConvertTo.Items.Add("US Teaspoon");
+                        cmboConvertTo.Items.Add("Liter");
+                        cmboConvertTo.Items.Add("Milliliter");
 
                         break;
 
                 }
                
-                //now set the first item in the cmboConversion box to the 0 value (first value)
+                //now set the first item in the cmboConvertFrom box to the 0 value (first value)
+                //and the cmboConvertTo box to 1, no point in making them the same index.
                 cmboConvertFrom.SelectedIndex = 0;
-                cmboConvertTo.SelectedIndex = 1; 
+                cmboConvertTo.SelectedIndex = 1;
 
             }
 

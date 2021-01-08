@@ -9,113 +9,81 @@ namespace Metric_US_Converter
     class Volume
     {
         private double inputValue;
-        private int index;
+        private int fromIndex;
+        private int toIndex;
 
-        public Volume(double inputValue, int index)
+        public Volume(double inputValue, int fromIndex, int toIndex)
         {
             this.InputValue = inputValue;
-            this.index = index;
+            this.FromIndex = fromIndex;
+            this.ToIndex = toIndex;
         }
 
-        #region GET/SET
+        #region Get/Seet
         public double InputValue
         {
             get { return inputValue; }
             set { inputValue = value; }
         }
 
-        public int Index
+        public int FromIndex
         {
-            get { return index; }
-            set { index = value; }
+            get { return fromIndex; }
+            set { fromIndex = value; }
+        }
+
+        public int ToIndex
+        {
+            get { return toIndex; }
+            set { toIndex = value; }
         }
 
         #endregion
 
+        /* Zero based index
+        US Cups         = 0
+        US Quart        = 1
+        US Pint         = 2
+        US Gallon       = 3
+        US Ounce        = 4
+        US Tablespoon   = 5
+        US Teaspoon     = 6
+        Liter           = 7
+        Milliliter      = 8
+        */
+
         public string ConvertVolume()
         {
             string output = "";
-            switch (index)
-            {
-                case 0:
-                    output = CupsToGallons(inputValue);
-                    break;
-                case 1:
-                    output = GallonsToCups(inputValue);
-                    break;
-                case 2:
-                    output = USCupToUSQuart(inputValue);
-                    break;
-                case 3:
-                    output = USQuartToUSCup(inputValue);
-                    break;
-                case 4:
-                    output = USCupToUSPint(inputValue);
-                    break;
-                case 5:
-                    output = USPintToUSCup(inputValue);
-                    break;
+            if (toIndex == fromIndex)
+                output = String.Format("{0}", InputValue.ToString("0.#"));
+            else
+            { 
+                switch (fromIndex)
+                {
+                    case 0: //US Cups
+                        if (toIndex == 1) //US Quart
+                            output = Divisor(InputValue, 3.943);
+
+                        break;
+
+
+                }
+
             }
-            return output;
+            return output;           
         }
 
-        private string CupsToGallons(double inputValue)
+        private string Multiplier(double inputValue, double value)
         {
-            double myValue = (inputValue / 16);
-            return String.Format("{0} gals", myValue.ToString("0.####"));
+            double myValue = (inputValue * value);
+            return myValue.ToString("G4");
         }
 
-        private string GallonsToCups(double inputValue)
+        private string Divisor(double inputValue, double value)
         {
-            double myValue = (inputValue * 16);
-            return String.Format("{0} cups", myValue.ToString("0.####"));
-        }
-
-        private string USCupToUSQuart(double inputValue)
-        {
-            double myValue = (inputValue / 4);
-            return String.Format("{0} US Quarts", myValue.ToString("0.###"));
-        }
-        private string USQuartToUSCup(double inputValue)
-        {
-            double myValue = (inputValue * 4);
-            return String.Format("{0} cups", myValue.ToString("0.###"));
-        }
-
-        private string USCupToUSPint(double inputValue)
-        {
-            double myValue = (inputValue / 2);
-            return String.Format("{0} US Pints", myValue.ToString("0.##"));
-        }
-
-        private string USPintToUSCup(double inputValue)
-        {
-            double myValue = (inputValue * 2);
-            return String.Format("{0} US Cups", myValue.ToString("0.##"));
-        }
-
-        private string USCuptoUSLegalCup(double inputValue)
-        {
-            double myValue = (inputValue / 1.014);
-            return String.Format("{0} US Legal Cups", myValue.ToString("0.##"));
-        }
-        
-        private string USCupToUSFluidOunce (double inputvalue)
-        {
-            double myValue = (inputValue * 8);
-            return String.Format("{0} US Fluid Oz", myValue.ToString("0.##"));
-        }
-        
-        private string USFLuidOunceToUSCup(double inputvalue)
-        {
-            double myValue = (inputValue / 8);
-            return String.Format("{0} US Cups", myValue.ToString("0.##"));
-        }
-
-        private string USFLuidOunceToUSGallon(double inputvalue)
-        {
-            double myValue = (inputValue / 128);
-            return String.Format("{0} US Gallons", myValue.ToString("0.####"));
+            double myValue = (inputValue / value);
+            return myValue.ToString("G4");
         }
 
     }

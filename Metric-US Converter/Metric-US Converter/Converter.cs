@@ -70,10 +70,10 @@ namespace Metric_US_Converter
                     Length myLength = new Length(inputValue, FromIndex, ToIndex);
                     conversionOutput = myLength.ConvertLength();
                     break;
-               /* case 2: //Volume
-                    Volume myVolume = new Volume(inputValue, index);
+               case 2: //Volume
+                    Volume myVolume = new Volume(inputValue, FromIndex, ToIndex);
                     conversionOutput = myVolume.ConvertVolume();
-                    break;*/
+                    break;
             }
 
             return conversionOutput;

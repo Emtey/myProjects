@@ -99,7 +99,6 @@
             this.cmboConvertFrom.Name = "cmboConvertFrom";
             this.cmboConvertFrom.Size = new System.Drawing.Size(159, 21);
             this.cmboConvertFrom.TabIndex = 3;
-            this.cmboConvertFrom.UseWaitCursor = true;
             // 
             // conversionTypeCmbBox
             // 
@@ -119,7 +118,6 @@
             this.cmboConvertTo.Name = "cmboConvertTo";
             this.cmboConvertTo.Size = new System.Drawing.Size(159, 21);
             this.cmboConvertTo.TabIndex = 9;
-            this.cmboConvertTo.UseWaitCursor = true;
             // 
             // Form1
             // 

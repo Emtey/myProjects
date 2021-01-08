@@ -22,7 +22,7 @@ namespace Metric_US_Converter
 
         public string ConvertTemperature()
         {
-             string output = "";
+            string output = "";
             if (ToIndex == FromIndex)
                 output = String.Format("{0}", InputValue.ToString("0.#"));
             else
