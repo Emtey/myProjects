@@ -140,7 +140,7 @@ namespace Metric_US_Converter
                             output = Divisor(InputValue, 1000);
                         if (toIndex == 7) //Kilometers
                             output = Divisor(InputValue, 1000000);  
-                        break;
+                        break; 
                     case 5: // centimeters
                         if (toIndex == 0) //inches
                             output = Divisor(InputValue, 2.54);

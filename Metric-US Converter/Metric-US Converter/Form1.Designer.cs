@@ -41,10 +41,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(172, 173);
+            this.button1.Location = new System.Drawing.Point(182, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 50);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Convert";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -59,10 +59,10 @@
             // TxtBoxResult
             // 
             this.TxtBoxResult.Enabled = false;
-            this.TxtBoxResult.Location = new System.Drawing.Point(352, 73);
+            this.TxtBoxResult.Location = new System.Drawing.Point(351, 73);
             this.TxtBoxResult.Name = "TxtBoxResult";
             this.TxtBoxResult.ReadOnly = true;
-            this.TxtBoxResult.Size = new System.Drawing.Size(158, 20);
+            this.TxtBoxResult.Size = new System.Drawing.Size(159, 20);
             this.TxtBoxResult.TabIndex = 2;
             this.TxtBoxResult.TabStop = false;
             // 
@@ -85,14 +85,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 80);
+            this.label3.Location = new System.Drawing.Point(324, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 13);
+            this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "TO";
+            this.label3.Text = "To:";
             // 
             // cmboConvertFrom
             // 
+            this.cmboConvertFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmboConvertFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmboConvertFrom.FormattingEnabled = true;
             this.cmboConvertFrom.IntegralHeight = false;
             this.cmboConvertFrom.Location = new System.Drawing.Point(138, 93);
@@ -102,6 +104,8 @@
             // 
             // conversionTypeCmbBox
             // 
+            this.conversionTypeCmbBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.conversionTypeCmbBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.conversionTypeCmbBox.FormattingEnabled = true;
             this.conversionTypeCmbBox.Location = new System.Drawing.Point(12, 21);
             this.conversionTypeCmbBox.Name = "conversionTypeCmbBox";
@@ -112,18 +116,20 @@
             // 
             // cmboConvertTo
             // 
+            this.cmboConvertTo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmboConvertTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmboConvertTo.FormattingEnabled = true;
             this.cmboConvertTo.IntegralHeight = false;
             this.cmboConvertTo.Location = new System.Drawing.Point(351, 93);
             this.cmboConvertTo.Name = "cmboConvertTo";
             this.cmboConvertTo.Size = new System.Drawing.Size(159, 21);
-            this.cmboConvertTo.TabIndex = 9;
+            this.cmboConvertTo.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 248);
+            this.ClientSize = new System.Drawing.Size(543, 206);
             this.Controls.Add(this.cmboConvertTo);
             this.Controls.Add(this.conversionTypeCmbBox);
             this.Controls.Add(this.cmboConvertFrom);
