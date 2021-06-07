@@ -42,7 +42,7 @@ namespace PasswordCreator
             // 
             // txtBoxPassowrdLength
             // 
-            this.txtBoxPassowrdLength.Location = new System.Drawing.Point(179, 39);
+            this.txtBoxPassowrdLength.Location = new System.Drawing.Point(276, 42);
             this.txtBoxPassowrdLength.Name = "txtBoxPassowrdLength";
             this.txtBoxPassowrdLength.Size = new System.Drawing.Size(100, 20);
             this.txtBoxPassowrdLength.TabIndex = 0;
@@ -52,23 +52,24 @@ namespace PasswordCreator
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 13);
+            this.label1.Size = new System.Drawing.Size(241, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Please enter length of password:";
+            this.label1.Text = "Please enter length of password: (between 8 - 25)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 13);
+            this.label2.Size = new System.Drawing.Size(221, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Special Characters  Allowed: ";
+            this.label2.Text = "Special Characters  Allowed:  (ex: \"!$<>*+_\" )";
             // 
             // rdoBtnYes
             // 
             this.rdoBtnYes.AutoSize = true;
-            this.rdoBtnYes.Location = new System.Drawing.Point(179, 78);
+            this.rdoBtnYes.Checked = true;
+            this.rdoBtnYes.Location = new System.Drawing.Point(276, 78);
             this.rdoBtnYes.Name = "rdoBtnYes";
             this.rdoBtnYes.Size = new System.Drawing.Size(43, 17);
             this.rdoBtnYes.TabIndex = 3;
@@ -79,11 +80,10 @@ namespace PasswordCreator
             // rdoBtnNo
             // 
             this.rdoBtnNo.AutoSize = true;
-            this.rdoBtnNo.Location = new System.Drawing.Point(228, 78);
+            this.rdoBtnNo.Location = new System.Drawing.Point(325, 78);
             this.rdoBtnNo.Name = "rdoBtnNo";
             this.rdoBtnNo.Size = new System.Drawing.Size(39, 17);
             this.rdoBtnNo.TabIndex = 4;
-            this.rdoBtnNo.TabStop = true;
             this.rdoBtnNo.Text = "No";
             this.rdoBtnNo.UseVisualStyleBackColor = true;
             // 
@@ -111,6 +111,7 @@ namespace PasswordCreator
             this.btnCreatePassword.TabIndex = 7;
             this.btnCreatePassword.Text = "Create Password";
             this.btnCreatePassword.UseVisualStyleBackColor = true;
+            this.btnCreatePassword.Click += new System.EventHandler(this.btnCreatePassword_Click);
             // 
             // btnExit
             // 
