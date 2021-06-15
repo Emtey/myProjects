@@ -13,9 +13,14 @@ namespace PasswordCreator
 {
     public partial class frmCreatePassword : Form
     {
+
+        PasswordInformation pi = PasswordInformation.Instance();
         public frmCreatePassword()
         {
             InitializeComponent();
+
+            //load the Password Information file and store it in a dictionary
+            pi.Load();
         }
 
         /// <summary>
@@ -27,6 +32,8 @@ namespace PasswordCreator
         {
             this.Hide();
         }
+       
+
 
         /// <summary>
         /// Create the password and save it to the file.
@@ -73,7 +80,7 @@ namespace PasswordCreator
             }
 
             if (txtBoxName.Text != "")
-                name = txtBoxName.Text;
+                name = txtBoxName.Text.ToUpper();
             else
             {
                 MessageBox.Show("Please enter a name for this password.");
@@ -105,17 +112,22 @@ namespace PasswordCreator
 
                 //now we know what line number we have use it to seed the 
                 //Random number generator to get a secure random number
-                //passwordPosition = myRandom.Next(passwordChars[passwordCharsLineNumber].Length);
                 passwordPosition = GetSecureRandomNumber(0, passwordChars[passwordCharsLineNumber].Length - 1);
 
                 char[] text = passwordChars[passwordCharsLineNumber].ToCharArray();
-                newPassword += text[passwordPosition];
-             
+                newPassword += text[passwordPosition];             
             }
+            //save the password to file
+            pi.AddPassword(name, newPassword);
+            
 
-            MessageBox.Show("Your new password is: " +  newPassword.ToString());
         }
-
+        /// <summary>
+        /// Gets a secured random number, using the Crypto Service Provider
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns>Secured Random Number</returns>
         private int GetSecureRandomNumber(int min, int max)
         {
             var rand = new byte[4];
@@ -124,6 +136,5 @@ namespace PasswordCreator
             var i = Math.Abs(BitConverter.ToInt32(rand, 0));
             return Convert.ToInt32(i % (max - min + 1) + min);
         }
-
     }
 }

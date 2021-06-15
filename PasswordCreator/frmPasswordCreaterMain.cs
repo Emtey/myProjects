@@ -22,5 +22,11 @@ namespace PasswordCreator
             frmCreatePassword myForm = new frmCreatePassword();
             myForm.Show();
         }
+
+        private void btnDisplayPassword_Click(object sender, EventArgs e)
+        {
+            frmDisplayPassword myForm = new frmDisplayPassword();
+            myForm.Show();
+        }
     }
 }
