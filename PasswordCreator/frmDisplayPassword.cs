@@ -22,8 +22,8 @@ namespace PasswordCreator
             //LstViewPassword.AutoResizeColumn = true;
 
             //Add column headers
-            LstViewPassword.Columns.Add("Name", 100);
-            LstViewPassword.Columns.Add("Password", 150);        
+            LstViewPassword.Columns.Add("Name", 130);
+            LstViewPassword.Columns.Add("Password", 200);        
           
             pi.Load();
             List<PasswordEntity> myList = new List<PasswordEntity>();
